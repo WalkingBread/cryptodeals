@@ -28,9 +28,11 @@ window.onload = function() {
     request.open("GET", 'http://127.0.0.1:8080/api');
     request.onreadystatechange = function() { 
         if (request.readyState === 4 && request.status === 200) {
-            const currencies = parse_data(request.responseText);
+            let currencies = parse_data(request.responseText);
+            currencies = sort_by(def, currencies);
             display_data(currencies, 0, 50);
-            table_cosm();
+            setup_table_controls(currencies);
+            setup_ranking_controls(currencies);
         }
     };
     request.send(null); 

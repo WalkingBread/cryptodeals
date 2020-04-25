@@ -20,7 +20,10 @@ app.get('/api', (req, res) => {
 
         const lasttime = data;
 
-        if (time >= lasttime + 3600) {
+
+        if (time - lasttime >= 3600 * 1000) {
+
+            console.log('update');
 
             const requestOptions = {
                 method: 'GET',
@@ -49,6 +52,7 @@ app.get('/api', (req, res) => {
                 res.send(err.message);
             });
         } else {
+            console.log('fetching from file');
             fs.readFile(__dirname + '/res/data.json', 'utf8', (err, data) => {
                 if (err) {
                   return console.log(err);

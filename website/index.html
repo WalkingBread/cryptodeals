@@ -29,24 +29,33 @@
             </div>
         </nav>
         <main>
+            <div class="upper-button-container">
+            </div>
             <table class="ranking-table">
                 <thead>
                     <tr>
-                        <th class="index">#</th>
-                        <th class="name">Name</th>
-                        <th class="price">Price</th>
-                        <th class="market_cap">Market Cap</th>
-                        <th class="volume">Volume (24h)</th>
-                        <th class="circulating_supply">Circulating Supply</th>
-                        <th class="change">Change (24h)</th>
-                        <th class="chart">Price Chart (7d)</th>
+                        <th class="table-header-des" id="index">#</th>
+                        <th class="table-header-des" id="name">Name</th>
+                        <th class="table-header-des" id="price">Price</th>
+                        <th class="table-header-default" id="market-cap">Market Cap</th>
+                        <th class="table-header-des" id="volume">Volume (24h)</th>
+                        <th class="table-header-des" id="circulating-supply">Circulating Supply</th>
+                        <th class="table-header-des" id="change">Change (24h)</th>
+                        <th class="table-header-des" id="chart">Price Chart (7d)</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="data-table">
                 </tbody>
             </table>
+            <div class="lower-button-container">
+                <button class="control-button" id="back-button">&lt;</button>
+                <button class="control-button" id="forward-button">&gt;</button>
+            </div>
         </main>
+        <script src="/js/tools.js"></script>
         <script src="/js/table.js"></script>
+        <script src="/js/table-controls.js"></script>
+        <script src="/js/ranking-controls.js"></script>
         <script src="/js/index.js"></script>
         <script src="/js/navbar.js"></script>
     </body>

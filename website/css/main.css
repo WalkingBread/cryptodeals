@@ -9,7 +9,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     border-radius: 25px;
     margin: 0 auto;
-    margin-top: 10vh;
+    margin-top: 2vh;
     padding: 20px 20px 20px 20px;
     text-align: left;
 }
@@ -23,7 +23,76 @@ body {
     margin-right: 5px;
 }
 
-.selected-row {
+.table-row:hover {
     background-color: #5c2ee6;
 }
 
+.upper-button-container {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+.lower-button-container {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.control-button {
+    background-color: #8263e0;
+    border: none;
+    border-radius: 10px;
+    color: rgb(219, 218, 218);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 15px 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1660px) {
+    #chart {
+        display: none;
+    }
+
+    .chart-td {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    #circulating-supply {
+        display: none;
+    }
+
+    .circulating-supply-td {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    #volume {
+        display: none;
+    }
+
+    .volume-td {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .ranking-table {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .ranking-table {
+        width: 100%;
+    }
+}
+
+.table-header-sel, .table-header-default {
+    background-color: #654caf;
+    border-radius: 10px;
+}
