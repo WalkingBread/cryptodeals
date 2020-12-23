@@ -13,7 +13,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #8263e0;
+    background-color: transparent;
     font-family: 'Montserrat', sans-serif;
     color: rgb(219, 218, 218);
 }

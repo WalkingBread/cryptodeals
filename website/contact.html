@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/contact.css">
+        <title>CryptoDeals</title>
+        <description style="display: none;">Cryptocurrency listing website with real-time data and beatiful ui.</description>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <nav>
+            <div class="crd-logo">
+                <h4>Crypto Ass!stant</h4>
+            </div>
+            <ul class="crd-nav-links">
+                <li>
+                    <a href="http://127.0.0.1:8080/">RANKINGS</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8080/about">ABOUT</a>
+                </li>
+                <li>
+                    <a href="">CONTACT</a>
+                </li>
+            </ul>
+            <div class="crd-mobile-view">
+                <div class="bread1"></div>
+                <div class="bread2"></div>
+                <div class="bread3"></div>
+            </div>
+        </nav>
+        <main>
+            <div class="text-block">
+                <h2 class="text-block-title">CONTACT US</h2>
+                <form action="http://127.0.0.1:8080/email" method="POST">
+                    <label for="name">First name and last name</label>
+                    <input class="small-input" type="text" name="name" placeholder="Enter your name">
+                
+                    <label for="lname">E-mail address</label>
+                    <input class="small-input" type="text" name="email" placeholder="Enter your email address">
+
+                    <label for="lname">Subject</label>
+                    <input class="small-input" type="text" name="subject" placeholder="Write the subject">
+                
+                    <label for="subject">Subject</label>
+                    <textarea class="big-input" name="text" placeholder="Email contents"></textarea>
+                
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+            </div>
+        </main>
+        <script src="/js/background.js"></script>
+        <script src="/js/navbar.js"></script>
+    </body>
+</html>

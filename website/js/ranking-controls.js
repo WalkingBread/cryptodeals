@@ -2,13 +2,17 @@ const def = document.getElementById('market-cap');
 let sorted_by = def;
 sorted_by.classList.toggle('table-header-sel');
 
-function setup_ranking_controls(currencies) {
+function setup_ranking_controls() {
     def.addEventListener('click', () => {
         sorted_by.className = 'table-header-des';
         sorted_by = def;
         currencies = sort_by(def.id, currencies);
-        display_data(currencies, data_start_index, data_start_index + data_per_page);
         def.className = 'table-header-default';
+        if(currencies.length <= data_per_page) {
+            display_data(currencies, data_start_index, currencies.length);
+        } else {
+            display_data(currencies, data_start_index, data_start_index + data_per_page);
+        }
     });
 
     const headers = document.querySelectorAll('.table-header-des');
@@ -18,15 +22,18 @@ function setup_ranking_controls(currencies) {
             if(sorted_by == h) {
                 sorted_by = def;
                 currencies = sort_by(def.id, currencies);
-                display_data(currencies, data_start_index, data_start_index + data_per_page);
                 def.className = 'table-header-default';
                 h.className = 'table-header-des';
             } else {
                 sorted_by.className = 'table-header-des';
                 sorted_by = h;
                 currencies = sort_by(h.id, currencies);
-                display_data(currencies, data_start_index, data_start_index + data_per_page);
                 h.className = 'table-header-sel';
+            }
+            if(currencies.length <= data_per_page) {
+                display_data(currencies, data_start_index, currencies.length);
+            } else {
+                display_data(currencies, data_start_index, data_start_index + data_per_page);
             }
         });
     });

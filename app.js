@@ -1,10 +1,12 @@
 const express = require('express');
 const rp = require('request-promise');
 const fs = require('fs');
+const mailer = require('nodemailer');
+const body_parser = require('body-parser');
 
 const app = express();
 app.use(express.static('website'))
-
+app.use(body_parser());
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/website/index.html');
@@ -62,6 +64,42 @@ app.get('/api', (req, res) => {
             });
         }
     });
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/website/contact.html');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/website/about.html');
+});
+
+app.post('/email', (req, res) => {
+    console.log(req.body);
+    const transporter = mailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'cryptoassistant.com@gmail.com',
+            pass: '112Db36.'
+        }
+    });
+
+    const mail_options = {
+        from: 'cryptoassistant.com@gmail.com',
+        to: 'cryptoassistant.com@gmail.com',
+        subject: req.body.subject,
+        text: 'email: ' + req.body.email + '\n' + 'name: ' + req.body.name + '\n' + 'text: ' + req.body.text
+    };
+
+    transporter.sendMail(mail_options, function(error, info){
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    res.sendFile(__dirname + '/website/contact.html');
 });
 
 const server = app.listen(8080, () => {

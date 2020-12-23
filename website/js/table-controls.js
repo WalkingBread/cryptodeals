@@ -1,7 +1,7 @@
 let data_start_index = 0;
 let data_per_page = 50;
 
-function setup_table_controls(currencies) {
+function setup_table_controls() {
     back_button = document.getElementById('back-button');
     back_button.addEventListener('click', () => {
         prev_page(currencies);

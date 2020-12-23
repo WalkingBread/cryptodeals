@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang="en">
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/css/navbar.css">
         <link rel="stylesheet" href="/css/main.css">
         <title>CryptoDeals</title>
+        <description style="display: none;">Cryptocurrency listing website with real-time data and beatiful ui.</description>
     </head>
     <body>
+        <canvas id="canvas"></canvas>
         <nav>
             <div class="crd-logo">
-                <h4>Crypto Dea!s</h4>
+                <h4>Crypto Ass!stant</h4>
             </div>
             <ul class="crd-nav-links">
                 <li>
-                    <a href="#">RANKINGS</a>
+                    <a href="">RANKINGS</a>
                 </li>
                 <li>
-                    <a href="#">ABOUT</a>
+                    <a href="http://127.0.0.1:8080/about">ABOUT</a>
                 </li>
                 <li>
-                    <a href="#">CONTACT</a>
+                    <a href="http://127.0.0.1:8080/contact">CONTACT</a>
                 </li>
             </ul>
             <div class="crd-mobile-view">
@@ -30,18 +32,19 @@
         </nav>
         <main>
             <div class="upper-button-container">
+                <input id="searcher"class="small-input" type="text" placeholder="Search">
             </div>
             <table class="ranking-table">
                 <thead>
                     <tr>
-                        <th class="table-header-des" id="index">#</th>
+                        <th id="index">#</th>
                         <th class="table-header-des" id="name">Name</th>
                         <th class="table-header-des" id="price">Price</th>
                         <th class="table-header-default" id="market-cap">Market Cap</th>
                         <th class="table-header-des" id="volume">Volume (24h)</th>
                         <th class="table-header-des" id="circulating-supply">Circulating Supply</th>
                         <th class="table-header-des" id="change">Change (24h)</th>
-                        <th class="table-header-des" id="chart">Price Chart (7d)</th>
+                        <th id="chart">Price Chart (7d)</th>
                     </tr>
                 </thead>
                 <tbody class="data-table">
@@ -53,10 +56,12 @@
             </div>
         </main>
         <script src="/js/tools.js"></script>
+        <script src="/js/search.js"></script>
         <script src="/js/table.js"></script>
         <script src="/js/table-controls.js"></script>
         <script src="/js/ranking-controls.js"></script>
         <script src="/js/index.js"></script>
         <script src="/js/navbar.js"></script>
+        <script src="/js/background.js"></script>
     </body>
 </html>
