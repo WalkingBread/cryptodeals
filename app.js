@@ -80,7 +80,7 @@ app.post('/email', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'cryptoassistant.com@gmail.com',
-            pass: '112Db36.'
+            pass: ''
         }
     });
 
